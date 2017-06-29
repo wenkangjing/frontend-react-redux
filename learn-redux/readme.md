@@ -43,8 +43,14 @@ Object shorthand
 
 export vs export default
 
+how to wire up React to Redux
+- import { Provider } from 'react-redux';
+- make <Provider> wrap the entire <Router>
 
-
+React DevTools
+- `$r`: current selected React Component
+- `$r.store` attached store
+- `$r.store.getState()`
 
 7/20
 
