@@ -57,4 +57,11 @@ needs 2 params:
 - a DOM element: whare to render to
 - `ReactDOM.render(<App/>, document.querySelector('.container'));`
 
+### Component Structure
+- bottom up: details -> one big container
+- nested: item as a component, list as another one
+- reuse component
+- always one component per file
+
+![Component Structure](./component_structure.png)
 
