@@ -90,6 +90,12 @@ Named exports
 - import libary `import react from 'react'`
 - `import React, { Component } from 'react';` same as `const Component = React.Component`
 
+### NodeJS requre vs ES6 import/export
+
+https://stackoverflow.com/questions/31354559/using-node-js-require-vs-es6-import-export#31367852
+
+> Keep in mind that there is no JavaScript engine yet that natively supports ES6 modules. You said yourself that you are using Babel. Babel converts import and export declaration to CommonJS (require/module.exports) by default anyway. So even if you use ES6 module syntax, you will be using CommonJS under the hood if you run the code in Node.
+
 
 ### Component
 - always start with functional component, refactory it when needed
@@ -160,3 +166,17 @@ state -> control
 - `<input value={this.state.term} />`
 
 > use `{}` to wrap js in jsx
+
+### Data flow
+
+- downward data flow via **props**
+- only the most parent component should be responsible for fetching data
+
+> ES6 shorthand `{ videos: videos }` equals to `{ videos }`
+
+
+### Pass data from parent component to its children
+- passing data via `props`
+- `<VideoList videos={this.state.videos}/>`
+- in functional component, use `props` as a param `const VideoList = (props) => {props.video}`
+- in class component, use `this.props` as a member `this.props.videos`
