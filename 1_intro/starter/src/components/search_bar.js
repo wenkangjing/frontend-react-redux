@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class SearchBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { term: '' };
+    this.state = { term: 'n/a' };
   }
   render() {
     return (
@@ -12,7 +12,7 @@ class SearchBar extends Component {
           value={this.state.term}
           onChange={event => this.setState({ term: event.target.value })}
         />
-        <input type="button" value="show state" onClick={event => console.warn(this.state.term)}/>
+        <label>{this.state.term}</label>
       </div>
     );
   }

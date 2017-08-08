@@ -95,6 +95,10 @@ Named exports
 - always start with functional component, refactory it when needed
 
 functional component
+- without a state
+- just return some jsx
+- can contain class-based component
+
 ```js
 const SearchBar = () => {
   return <input /> // React.createElement still need 'react'
@@ -103,6 +107,9 @@ export default SearchBar;
 ```
 
 class-based component
+- when we need a state
+- date changing overtime
+
 ```js
 class SearchBar extends React.Component {
   render() {
@@ -144,14 +151,12 @@ render() {
 #### Manipulate state
 
 control -> state
-- DOM callback -> this.setState
+- element callback = this.setState 
 - `<input type="text" onChange={event => this.setState({ term: event.target.value })}/>`
 - `this.setState({ bala })` to inform react state is changing
 
 state -> control
-- this.state -> control value/
+- this.state -> control value
 - `<input value={this.state.term} />`
-
-
 
 > use `{}` to wrap js in jsx
