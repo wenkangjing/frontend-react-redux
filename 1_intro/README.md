@@ -202,6 +202,40 @@ const VideoListItem = ({video}) => {
   );
 }
 
+```
 
+### string interpulation
 
+ - `const url = 'https://www.youtube.com/embed/${videoId}';`
+ - `const url = 'https://www.youtube.com/embed/' + videoId;`
+
+### Embedded youtube video iframe
+```js
+const VideoDetail = ({video}) => {
+  const videoId = video.id.videoId;
+  const url = `https://www.youtube.com/embed/${videoId}`
+  return (
+    <div className="video-detail col-md-8">
+      <div className="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src={url}></iframe>
+      </div>
+      <div className="details">
+        <div>{video.snippet.title}</div>
+        <div>{video.snippet.title}</div>
+      </div>
+    </div>
+  );
+};
+```
+
+### Initial state 
+
+- before ajax callback
+- state.bala is `undefined`
+- put a guard statement at beginning of render()
+
+```js
+if (!video) {
+  return <div>Loading...</div>;
+}
 ```
