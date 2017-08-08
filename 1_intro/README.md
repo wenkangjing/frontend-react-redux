@@ -180,3 +180,9 @@ state -> control
 - `<VideoList videos={this.state.videos}/>`
 - in functional component, use `props` as a param `const VideoList = (props) => {props.video}`
 - in class component, use `this.props` as a member `this.props.videos`
+
+### Iterating array in jsx
+- ger rid of for loop, use `map`
+- **list item key** consistent, one per record
+
+> Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of `VideoList`. See https://fb.me/react-warning-keys for more information.
