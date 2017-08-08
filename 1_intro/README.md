@@ -65,3 +65,84 @@ needs 2 params:
 
 ![Component Structure](./component_structure.png)
 
+### Export Component
+- component can be nested
+- a outer-most component import children component
+- outer component: `import`
+- inner component: `export`
+
+```js
+export default SearchBar;
+export {SearchBar}
+```
+
+Default exports
+- `export default`
+- to export a single value
+
+Named exports
+- `export { SearchBar }`
+- `export const foo = Math.sqrt(2);`
+
+
+### Import Component
+- import our files `import SearchBar from './search_bar';`
+- import libary `import react from 'react'`
+- `import React, { Component } from 'react';` same as `const Component = React.Component`
+
+
+### Component
+- always start with functional component, refactory it when needed
+
+functional component
+```js
+const SearchBar = () => {
+  return <input /> // React.createElement still need 'react'
+};
+export default SearchBar;
+```
+
+class-based component
+```js
+class SearchBar extends React.Component {
+  render() {
+    return (
+      <input type="text"/>
+    )
+  }
+}
+export default SearchBar;
+```
+
+### Event Handler
+
+```js
+render() {
+  return (
+    <input type="text" onChange={this.onInputChange}/>
+  );
+}
+
+onInputChange(event) {
+  console.log(event.target.value);
+}
+
+// or in ES6
+render() {
+  return (
+    <input type="text" onChange={(event => console.log(event.target.value))}/>
+  );
+}
+```
+
+### State
+
+- each *class-based* component has its own state, a plain JS object
+- initialize in constructor `this.state = { bala }` 
+- any state change trigger itself and its descendant render
+
+#### Manipulate state
+
+- `this.setState({ bala })` to inform react state is changing
+
+> use `{}` to wrap js in jsx
