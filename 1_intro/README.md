@@ -239,3 +239,12 @@ if (!video) {
   return <div>Loading...</div>;
 }
 ```
+
+### Select item
+- hold *video object* instead of index/id
+- easy to access `this.state.selected`
+- **pass function to props**
+  + pass function all the way down to the control 
+  + App > VideoList > VideoListItem
+  + bind to element event handler
+
