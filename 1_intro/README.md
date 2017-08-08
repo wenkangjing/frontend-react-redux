@@ -183,6 +183,25 @@ state -> control
 
 ### Iterating array in jsx
 - ger rid of for loop, use `map`
-- **list item key** consistent, one per record
+- **key** child component of an array, consistent, one per record, for component
 
 > Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of `VideoList`. See https://fb.me/react-warning-keys for more information.
+
+```js
+const VideoListItem = (props) => {
+  const video = props.video; // shorthand in ES6
+  return (
+    <li>Video</li>
+  );
+};
+
+// same as
+const VideoListItem = ({video}) => {
+  return (
+    <li>Video</li>
+  );
+}
+
+
+
+```
