@@ -143,6 +143,15 @@ render() {
 
 #### Manipulate state
 
+control -> state
+- DOM callback -> this.setState
+- `<input type="text" onChange={event => this.setState({ term: event.target.value })}/>`
 - `this.setState({ bala })` to inform react state is changing
+
+state -> control
+- this.state -> control value/
+- `<input value={this.state.term} />`
+
+
 
 > use `{}` to wrap js in jsx
