@@ -181,6 +181,12 @@ state -> control
 - in functional component, use `props` as a param `const VideoList = (props) => {props.video}`
 - in class component, use `this.props` as a member `this.props.videos`
 
+### Inform parent component from children
+- define `onVideoSelect` in parent component
+- pass `onVideoSelect` down via `props`
+- bind `onVideoSelect` to element event 
+- so that `onVideoSelect` can be triggered by element event
+
 ### Iterating array in jsx
 - ger rid of for loop, use `map`
 - **key** child component of an array, consistent, one per record, for component
@@ -247,4 +253,3 @@ if (!video) {
   + pass function all the way down to the control 
   + App > VideoList > VideoListItem
   + bind to element event handler
-
