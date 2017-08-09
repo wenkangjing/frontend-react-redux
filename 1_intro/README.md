@@ -266,3 +266,15 @@ if (!video) {
 // get a new version of videoSearch that can only be called every 300 ms
 const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
 ```
+
+### React summary
+
+- component level state, localized
+  + App state: videos, selectedVideo
+  + SearchBar state: term
+  
+- SearchBar state impacts App state via *callbacks*
+
+but in Redux
+- state is more App level
+- hold a global state
