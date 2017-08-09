@@ -253,3 +253,7 @@ if (!video) {
   + pass function all the way down to the control 
   + App > VideoList > VideoListItem
   + bind to element event handler
+
+### Styling component
+- give a top level element a className, same as component name, lowercase with dash
+
