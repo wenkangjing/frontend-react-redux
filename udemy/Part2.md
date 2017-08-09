@@ -63,10 +63,18 @@ Damn Component
 ### react-redux
 
 in Container
-- `import { connect } from 'react-redux';`
-- `mapStateToProps`
-  + take the application state
-  + Whatever is returned will show up as props inside of the container
-- instead of export the Component, we export the Container
-  + `export default connect(mapStateToProps)(BookList)`
-  
+1. `import { connect } from 'react-redux';`
+  - container is the glue of react and redux
+  - using a glue lib called `react-redux`
+2. `mapStateToProps(state)`
+  - take the application state
+  - Whatever is returned will show up as props inside of the container
+  - it returns the content of `this.props`
+3. export the Container
+  - `export default connect(mapStateToProps)(BookList)`
+
+> Facts that using react-redux `connect` to create a container
+> 
+> whenever the application **state changes**, 
+>   1. container/component will **re-render**
+>   2. state will assign to this component `this.props`
