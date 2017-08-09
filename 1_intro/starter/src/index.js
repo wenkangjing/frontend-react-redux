@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search'
@@ -29,10 +30,13 @@ class App extends Component {
   }
 
   render() {
+    // get a new version of videoSearch that can only be called every 300 ms
+    const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
+    
     return (
       <div>
         <SearchBar 
-          onSearchTermChange={term => this.videoSearch(term)}/>
+          onSearchTermChange={term => videoSearch(term)}/>
         <VideoDetail 
           video={this.state.selectedVideo}/> 
         <VideoList 

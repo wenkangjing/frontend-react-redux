@@ -257,3 +257,12 @@ if (!video) {
 ### Styling component
 - give a top level element a className, same as component name, lowercase with dash
 
+### Throttling
+
+- use lodash
+- debounced function
+
+```js
+// get a new version of videoSearch that can only be called every 300 ms
+const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
+```
