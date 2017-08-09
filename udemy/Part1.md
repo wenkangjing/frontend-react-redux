@@ -65,7 +65,7 @@ needs 2 params:
 - reuse component
 - always one component per file
 
-![Component Structure](./component_structure.png)
+![Component Structure](./react_component_structure.png)
 
 ### Export Component
 - component can be nested
