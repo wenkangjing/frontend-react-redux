@@ -91,6 +91,8 @@ Named exports
 - import our files `import SearchBar from './search_bar';`
 - import libary `import react from 'react'`
 - `import React, { Component } from 'react';` same as `const Component = React.Component`
+  + React as the whole module
+  + {} pull off single property
 
 ### NodeJS requre vs ES6 import/export
 
