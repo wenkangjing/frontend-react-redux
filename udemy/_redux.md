@@ -168,3 +168,16 @@ react-redux
 - `connect`
 - `Provider` `{createProvider}`
 
+### Review
+
+- `Redux` is in charge of managing application state
+- `application stat`e is a single plain javascript object
+- application state vs component state **completely different**
+- `all reducers` tie together via `combineReducers`
+  - key: the state property
+  - value: a reducer
+- `reducer` change application state overtime using `action`
+- whenever a `action` dispatched, flow through `all reducers`
+- `actionCreator` is a simple function that returns an `action`
+- `action` is a plain javascript object with type property
+
