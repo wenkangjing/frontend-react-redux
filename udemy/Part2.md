@@ -102,3 +102,41 @@ in Container
 >
 > Whenever the application state changes, the container will re-render 
 
+### Action Creator
+
+![action, actionCreator, reducer, app state, props, render](./redux_action.png)
+A function that returns an action (an object)
+
+1. UI -> start
+- -> user click calls action creator **me**
+- -> actionCreator returns an `action/object` 
+- -> action automatically sent to `all reducers` **redux**
+- -> reducers `return a new state` or current state depending on what the action is **me**
+- -> application state got updated **redux**
+- -> notify related containers **redux**
+- -> containers render with new props **react**
+1. UI -> re render
+
+### Wire up Action Creator to Redux
+- `import { bindActionCreators } from 'redux';`
+- ensure action flow through all the reducers
+
+The connect() function takes two primary arguments, both optional. 
+- The first, `mapStateToProps`, is a function you provide to **pull data from the store** when it changes, and **pass those values as props to your component**.
+- The second, `mapDispatchToProps`, is a function you provide to make use of the store's dispatch function, usually by creating pre-bound versions of action creators that will **automatically dispatch their actions** as soon as they are called.
+
+### libaries
+
+react
+- ``
+
+redux
+- `combineReducers.js`
+- `bindActionCreators.js`
+- `applyMiddleware.js`
+- `compose.js`
+- `createStore.js`
+
+react-redux
+- `connect`
+- `Provider` `{createProvider}`
