@@ -28,7 +28,7 @@ http://redux.js.org/
 
 1. create a reducer `export a function returns a state`
 2. wire it into an application 
-  - combine into one reducer `combineReducers`
+  - combine into one reducer `combineReducers`, **key: reducer**
   - promote a component as **container** 
 
 ### Container
@@ -102,7 +102,18 @@ in Container
 >
 > Whenever the application state changes, the container will re-render 
 
+### Action
+
+- **An action is an object with a type property** and a payload
+- A type is always a **UPPER_CASE** string
+
+Tips: 
+- pull out to a separate file
+- use const
+
 ### Action Creator
+
+An Action Creator returns an action
 
 ![action, actionCreator, reducer, app state, props, render](./redux_action.png)
 A function that returns an action (an object)
@@ -122,10 +133,26 @@ A function that returns an action (an object)
 - ensure action flow through all the reducers
 
 The connect() function takes two primary arguments, both optional. 
-- The first, `mapStateToProps`, is a function you provide to **pull data from the store** when it changes, and **pass those values as props to your component**.
-- The second, `mapDispatchToProps`, is a function you provide to make use of the store's dispatch function, usually by creating pre-bound versions of action creators that will **automatically dispatch their actions** as soon as they are called.
+- The first, `mapStateToProps`, is a function you provide to **pull data from the store** when it changes, and **pass those values as props to your component**. 
+-  The second, `mapDispatchToProps`, is a function you provide to make use of the store's dispatch function, usually by creating pre-bound versions of action creators that will **automatically dispatch their actions** as soon as they are called.
 
-### libaries
+> `mapStateToProps` to display props to the browser
+>
+> `mapDispatchToProps` to handle user interaction
+>
+> `connect` to bind *StateToProps + DispatchToProps + Component*
+
+
+reducer function
+- 2 parameters: `(state, action)`
+- `state` argument is not application state, only the state this reducer is responsible for
+- redux not allow reducer returns `undefined`, need a initial state
+- **never mutate state, always return a fresh object**
+
+initial state
+- send booting up action to all reducers
+
+### libraries
 
 react
 - ``
@@ -140,3 +167,4 @@ redux
 react-redux
 - `connect`
 - `Provider` `{createProvider}`
+
