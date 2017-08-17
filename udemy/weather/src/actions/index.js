@@ -8,6 +8,9 @@ export const FETCH_WEATHER = 'FETCH_WEATHER'
 export function fetchWeather(city) {
   const url = `${ROOT_URL}&q=${city},au`;
   const request = axios.get(url);
+
+  // attach the promise to payload property of the action
+  // so that redux promise will take care of it 
   return {
     type: FETCH_WEATHER,
     payload: request

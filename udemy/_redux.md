@@ -136,9 +136,9 @@ The connect() function takes two primary arguments, both optional.
 - The first, `mapStateToProps`, is a function you provide to **pull data from the store** when it changes, and **pass those values as props to your component**. 
 -  The second, `mapDispatchToProps`, is a function you provide to make use of the store's dispatch function, usually by creating pre-bound versions of action creators that will **automatically dispatch their actions** as soon as they are called.
 
-> `mapStateToProps` to display props to the browser
+> `mapStateToProps` to map redux state -> react props, display to the browser
 >
-> `mapDispatchToProps` to handle user interaction
+> `mapDispatchToProps` to map action -> props, handle user interaction
 >
 > `connect` to bind *StateToProps + DispatchToProps + Component*
 
