@@ -127,10 +127,7 @@ Without Redux Promise
 - handle `receiveWeather` in reducer
 
 ### Increamental build up state
-to store all forecast to state, in reducer
-
-never manipulate redux state
-
+to store all forecast to state, in reducer never manipulate redux state
 
 ```js
 case FETCH_WEATHER:
@@ -139,7 +136,16 @@ case FETCH_WEATHER:
   return [ action.payload.data, ...state ]; // concat a new array with ES6
 ```
 
+```js
+function mapStateToProps(state) {
+  return { weather: state.weather };
+}
 
+// ES6
+function mapStateToProps({ weather }) {
+  return { weather };
+}
+```
 
 ### Redux Promise vs Redux Thunk
 
